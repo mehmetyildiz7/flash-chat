@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'login_screen.dart';
 import 'registration_screen.dart';
 
@@ -34,7 +34,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
 //    animation = CurvedAnimation(parent: animationController, curve: Curves.easeIn);
     animation = ColorTween(begin: Colors.red, end: Colors.blue).animate(animationController);
 
-    animationController.forward();
+//    animationController.forward();
     animationController.addStatusListener((status){
       if(status == AnimationStatus.completed){
         animationController.reverse(from: 1.0);
@@ -62,17 +62,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProvider
           children: <Widget>[
             Row(
               children: <Widget>[
-                Hero(
-                  tag: "logo",
-                  child: Container(
-                    child: Image.asset('images/logo.png'),
-                    height: animationController.value * 100,
-                  ),
-                  Type
+                Container(
+                  child: Image.asset('images/logo.png'),
+                  height: 50.0,
                 ),
-                Text(
-                  '${animationController.value.toInt()}%',
-                  style: TextStyle(
+                TypewriterAnimatedTextKit(
+                  text: ['FlashChat'],
+                  textStyle: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
