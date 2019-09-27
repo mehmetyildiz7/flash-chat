@@ -77,7 +77,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 24.0,
             ),
-            RoundedButton(title: "Register", callback: (){Navigator.pushNamed(context, RegistrationScreen.id);},)
+            RoundedButton(title: "Register", callback: null,),
           ],
         ),
       ),
